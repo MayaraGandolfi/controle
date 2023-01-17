@@ -3,6 +3,7 @@ package br.com.ada.controle.model;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.PrimaryKeyJoinColumn;
 
 @Entity
 public class Usuario {
@@ -12,7 +13,7 @@ public class Usuario {
     private Long id;
     private String nome;
     private String telefone;
-    private String cfp;
+    private String cpf;
     private String email;
 
     public Long getId() {
@@ -39,12 +40,12 @@ public class Usuario {
         this.telefone = telefone;
     }
 
-    public String getCfp() {
-        return cfp;
+    public String getCpf() {
+        return cpf;
     }
 
-    public void setCfp(String cfp) {
-        this.cfp = cfp;
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
 
     public String getEmail() {
