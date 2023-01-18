@@ -1,10 +1,13 @@
 package br.com.ada.controle.model;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 
+import java.time.LocalDate;
 @Entity
-public class Usuario {
-
+public class Funcionario {
     @Id
     @GeneratedValue
     private Long id;
@@ -12,10 +15,9 @@ public class Usuario {
     private String telefone;
     private String cpf;
     private String email;
-
+    private LocalDate dataContratacao;
     @OneToOne
     private Endereco endereco;
-
 
     public Long getId() {
         return id;
@@ -55,6 +57,14 @@ public class Usuario {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public LocalDate getDataContratacao() {
+        return dataContratacao;
+    }
+
+    public void setDataContratacao(LocalDate dataContratacao) {
+        this.dataContratacao = dataContratacao;
     }
 
     public Endereco getEndereco() {
