@@ -16,21 +16,22 @@ public class UsuarioController {
     }
 
     @PostMapping
-    public Usuario salvar(@RequestBody Usuario usuario){
+    public Usuario salvar(@RequestBody Usuario usuario) {
         return usuarioService.salvar(usuario);
     }
 
     @GetMapping({"/{id}"})
-    public Usuario buscarPorId(@PathVariable Long id){
+    public Usuario buscarPorId(@PathVariable Long id) {
         return usuarioService.buscarPorId(id);
     }
 
     @GetMapping
-    public List<Usuario> listarTodos(){
+    public List<Usuario> listarTodos() {
         return usuarioService.listarTodos();
     }
-   @DeleteMapping("/{id}")
-    public String deletar(@PathVariable Long id){
+
+    @DeleteMapping("/{id}")
+    public String deletar(@PathVariable Long id) {
         return usuarioService.deletar(id);
     }
 
