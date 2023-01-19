@@ -9,5 +9,4 @@ import java.util.List;
 public interface DespesaRepository extends CrudRepository<Despesa,Long> {
     Despesa findByNumeroNF(int nf);
     Despesa findById(Despesa despesa);
-    List<Despesa> findAll(Despesa despesa);
 }

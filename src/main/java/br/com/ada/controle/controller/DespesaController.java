@@ -30,7 +30,7 @@ public class DespesaController {
         return despesaService.listarTodos();
     }
 
-    @DeleteMapping("/{id]")
+    @DeleteMapping("/{id}")
     public String deletar(@PathVariable Long id) {
         return despesaService.deletar(id);
     }

@@ -14,32 +14,33 @@ public class DespesaService {
         this.despesaRepository = despesaRepository;
     }
 
-    public Despesa salvar(Despesa despesa){
+    public Despesa salvar(Despesa despesa) {
         Despesa despesaEncontrada = despesaRepository.findByNumeroNF(despesa.getNumeroNF());
-        if(despesaEncontrada != null){
+        if (despesaEncontrada != null) {
             throw new IllegalArgumentException("Nota fiscal já esta cadastrada em outra despesa");
         }
         return despesaRepository.save(despesa);
     }
 
-    public Despesa buscarPorNf(Integer numeroNf){
+    public Despesa buscarPorNf(Integer numeroNf) {
         return despesaRepository.findByNumeroNF(numeroNf);
     }
 
-    public Despesa buscarPorId(Long id){
+    public Despesa buscarPorId(Long id) {
         return despesaRepository.findById(id).orElse(null);
     }
 
-    public List<Despesa> listarTodos(){
+    public List<Despesa> listarTodos() {
         return (List<Despesa>) despesaRepository.findAll();
     }
 
-    public String deletar(Long id){
+    public String deletar(Long id) {
         Despesa despesaEncontrada = buscarPorId(id);
-        if (despesaEncontrada == null){
+        if (despesaEncontrada == null) {
             throw new IllegalArgumentException("Despesa não encontrada");
         }
         despesaRepository.delete(despesaEncontrada);
         return "Despesa deletada";
     }
 }
+
